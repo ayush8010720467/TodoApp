@@ -10,14 +10,14 @@
       <ion-label position="stacked">
         Email
       </ion-label>
-      <ion-input type="email" placeholder="abc@xyz.cc"></ion-input>
+      <ion-input type="email" placeholder="abc@xyz.cc" [(ngModel)]="email"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="stacked">
         Password
       </ion-label>
-      <ion-input type="Password" placeholder="Password"></ion-input>
+      <ion-input type="Password" placeholder="Password" [(ngModel)]="password"></ion-input>
     </ion-item>
   </ion-list>
-  <ion-button expand="block" color="danger">SignUp</ion-button>
+  <ion-button expand="block" color="danger" (click)="signup()">SignUp</ion-button>
 </ion-content>

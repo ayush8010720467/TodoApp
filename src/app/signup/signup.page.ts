@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-signup',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupPage implements OnInit {
 
+  email: string;
+  password: string;
   constructor() { }
 
   ngOnInit() {
+  }
+  signup() {
+    // using the firebase sdk to create new account for the user
+    firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then((data) => {
+      console.log(data);
+    }).catch((err) => {
+      console.log(err);
+    });
   }
 
 }
