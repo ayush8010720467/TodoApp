@@ -12,7 +12,7 @@ export class FirestorePage implements OnInit {
   products: any[] = [];
 
   constructor() {
-    this.getDocuments();
+    this.getProducts();
   }
 
   createDocument() {
@@ -25,8 +25,11 @@ export class FirestorePage implements OnInit {
       console.log(err);
     });
   }
-  getDocuments() {
-    firebase.firestore().collection('products').get().then((queryDocumentSnapshot) => {
+  getProducts() {
+    firebase.firestore().collection('products')
+  //  .where('product_price', '>=', '12000')
+    .orderBy('product_name', 'asc')
+    .get().then((queryDocumentSnapshot) => {
       console.log(queryDocumentSnapshot.docs);
       this.products = queryDocumentSnapshot.docs;
     }).catch((err) => {
