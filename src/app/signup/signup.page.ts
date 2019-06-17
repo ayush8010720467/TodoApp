@@ -20,6 +20,7 @@ export class SignupPage implements OnInit {
     firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then((userdata) => {
       // navigate the user to the app page
       console.log(userdata);
+      this.navCtrl.navigateForward(['/todo']);
     }).catch((err) => {
       this.tostCtrl.create({
         message: err.message,
