@@ -17,8 +17,8 @@
               <h3>
                   {{ todo.data().description }}
                 </h3>
-                <p>
-                    {{ todo.data().last_date }}
+                <p *ngIf="todo.data().last_date">
+                    {{ todo.data().last_date.toDate() }}
                   </p>
       </ion-label>
      
