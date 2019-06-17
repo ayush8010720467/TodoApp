@@ -6,6 +6,11 @@
 
 <ion-content padding>
   <ion-list>
+    <ion-item class="vertical-space">
+      <h1 class="center">
+        ToDo App
+      </h1>
+    </ion-item>
     <ion-item>
       <ion-label position="stacked">
         Email
@@ -19,5 +24,7 @@
       <ion-input type="Password" placeholder="Password" [(ngModel)]="password"></ion-input>
     </ion-item>
   </ion-list>
-  <ion-button expand="block" color="danger" (click)="signup()">SignUp</ion-button>
+  <ion-button expand="block" color="danger" (click)="signup()" shape="round">SignUp</ion-button>
+  <ion-button fill="clear" expand="block" color="danger" (click)="goToLogin()" >Already have an Account? Login Here</ion-button>
+
 </ion-content>
