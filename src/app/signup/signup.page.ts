@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
-import { ToastController } from '@ionic/angular';
+import { ToastController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-signup',
@@ -11,7 +11,7 @@ export class SignupPage implements OnInit {
 
   email: string;
   password: string;
-  constructor(private tostCtrl: ToastController) { }
+  constructor(private tostCtrl: ToastController, private navCtrl: NavController) { }
 
   ngOnInit() {
   }
@@ -26,8 +26,11 @@ export class SignupPage implements OnInit {
         duration: 3000
       }).then((toast) => {
         toast.present();
-      })
+      });
     });
+  }
+  goToLogin() {
+      this.navCtrl.back();
   }
 
 }
